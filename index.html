@@ -13,6 +13,8 @@
 		<link rel="stylesheet" href="./styles/apps/calculator.css" />
 		<link rel="stylesheet" href="./styles/apps/tic-tac-toe.css" />
 		<link rel="stylesheet" href="./styles/apps/settings.css" />
+		<link rel="stylesheet" href="./styles/apps/timer.css" />
+		<link rel="stylesheet" href="./styles/apps/countdown.css" />
 		<!-- Scripts -->
 		<script src="./scripts/main.js" type="module" defer></script>
 	</head>
@@ -146,6 +148,47 @@
 					</div>
 				</div>
 			</div>
+
+			<!-- Timer -->
+			<div class="window" data-window="timer" data-window-trigger="timer">
+				<div class="window__header">
+					<button class="window__control" data-window-minimize>MIN</button>
+					<button class="window__control" data-window-maximize>MAX</button>
+					<button class="window__control" data-window-close>CLOSE</button>
+					<div class="window__handle" data-window-handle></div>
+				</div>
+				<div class="window__body">
+					<div class="timer" data-timer>
+						<h1 data-timer-display>00:00</h1>
+						<button data-timer-start>Start</button>
+						<button data-timer-pause>Pause</button>
+						<button data-timer-reset>Reset</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- Countdown -->
+			<div
+				class="window"
+				data-window="countdown"
+				data-window-trigger="countdown"
+			>
+				<div class="window__header">
+					<button class="window__control" data-window-minimize>MIN</button>
+					<button class="window__control" data-window-maximize>MAX</button>
+					<button class="window__control" data-window-close>CLOSE</button>
+					<div class="window__handle" data-window-handle></div>
+				</div>
+				<div class="window__body">
+					<div class="countdown" data-countdown>
+						<h1 data-countdown-display></h1>
+						<input type="number" data-countdown-input />
+						<button data-countdown-start>Start</button>
+						<button data-countdown-pause>Pause</button>
+						<button data-countdown-reset>Reset</button>
+					</div>
+				</div>
+			</div>
 		</main>
 
 		<!-- FOOTER -->
@@ -153,10 +196,10 @@
 			<div class="footer__item" id="calculator">
 				<img src="./assets/icons/calculator/calculator-40.png" />
 			</div>
-			<div class="footer__item">
+			<div class="footer__item" id="countdown">
 				<img src="./assets/icons/folder/folder-40.png" />
 			</div>
-			<div class="footer__item">
+			<div class="footer__item" id="timer">
 				<img src="./assets/icons/mail/mail-40.png" />
 			</div>
 			<div class="footer__item" id="settings">

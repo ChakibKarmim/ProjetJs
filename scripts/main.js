@@ -3,6 +3,8 @@ import Window from './components/Window.js';
 import Calculator from './apps/Calculator.js';
 import TicTacToe from './apps/TicTacToe.js';
 import Settings from './apps/Settings.js';
+import Timer from './apps/Timer.js';
+import Countdown from './apps/Countdown.js';
 
 (function () {
 	/**
@@ -58,6 +60,36 @@ import Settings from './apps/Settings.js';
 
 	const settingsWindow = new Window({
 		node: document.querySelector("[data-window='settings']"),
+		width: 500,
+		height: 400,
+		resetCallback: function () {},
+	});
+
+	/**
+	 * Timer
+	 */
+
+	const timer = new Timer({
+		node: document.querySelector('[data-timer]'),
+	});
+
+	const timerWindow = new Window({
+		node: document.querySelector("[data-window='timer']"),
+		width: 500,
+		height: 400,
+		resetCallback: function () {},
+	});
+
+	/**
+	 * Countdown
+	 */
+
+	const countdown = new Countdown({
+		node: document.querySelector('[data-countdown]'),
+	});
+
+	const countdownWindow = new Window({
+		node: document.querySelector("[data-window='countdown']"),
 		width: 500,
 		height: 400,
 		resetCallback: function () {},
