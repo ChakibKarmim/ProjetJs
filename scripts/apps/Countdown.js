@@ -36,7 +36,7 @@ export default class Countdown {
 	}
 
 	onStart() {
-		if (this.isStarted) return;
+		if (this.isStarted || !this.input.value) return;
 		this.showTimer();
 
 		this.isStarted = true;
@@ -53,6 +53,8 @@ export default class Countdown {
 	}
 
 	onPause() {
+		if (!this.isStarted) return;
+
 		if (this.isPaused) {
 			this.pause.textContent = 'Pause';
 			this.isPaused = false;
@@ -65,6 +67,8 @@ export default class Countdown {
 	onReset() {
 		this.isStarted = false;
 		window.clearInterval(this.interval);
+		this.pause.textContent = 'Pause'; /* resolve closing window error */
+		this.input.value = ''; /* resolve closing window error */
 		this.counter = 0;
 		this.showTimer();
 	}

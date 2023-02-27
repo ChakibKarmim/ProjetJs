@@ -52,6 +52,7 @@ export default class Timer {
 	onReset() {
 		this.isStarted = false;
 		window.clearInterval(this.interval);
+		this.pause.textContent = 'Pause'; /* resolve closing window error */
 		this.counter = 0;
 		this.showTimer();
 	}

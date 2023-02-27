@@ -86,7 +86,9 @@ import Countdown from './apps/Countdown.js';
 		node: document.querySelector("[data-window='timer']"),
 		width: 500,
 		height: 400,
-		resetCallback: function () {},
+		resetCallback: function () {
+			timer.onReset();
+		},
 	});
 
 	/**
@@ -101,6 +103,8 @@ import Countdown from './apps/Countdown.js';
 		node: document.querySelector("[data-window='countdown']"),
 		width: 500,
 		height: 400,
-		resetCallback: function () {},
+		resetCallback: function () {
+			countdown.onReset();
+		},
 	});
 })();
