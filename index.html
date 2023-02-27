@@ -6,8 +6,8 @@
 		<title>Operating System</title>
 		<!-- Styles -->
 		<link rel="stylesheet" href="./styles/layouts/reset.css" />
-		<link rel="stylesheet" href="./styles/layouts/auth.css" />
 		<link rel="stylesheet" href="./styles/layouts/main.css" />
+		<link rel="stylesheet" href="./styles/layouts/auth.css" />
 		<link rel="stylesheet" href="./styles/layouts/header.css" />
 		<link rel="stylesheet" href="./styles/layouts/footer.css" />
 		<link rel="stylesheet" href="./styles/components/window.css" />
@@ -151,22 +151,44 @@
 				</div>
 				<div class="window__body">
 					<div class="settings" data-settings>
-						<label>
-							<input type="checkbox" data-settings-date />
-							<span>Date</span>
-						</label>
-						<label>
-							<input type="checkbox" data-settings-time />
-							<span>Time</span>
-						</label>
-						<label>
-							<input type="checkbox" data-settings-battery />
-							<span>Battery</span>
-						</label>
-						<label>
-							<input type="checkbox" data-settings-latency />
-							<span>Latency</span>
-						</label>
+						<div class="settings__visibility">
+							<h2>Modifier visibilité</h2>
+							<label>
+								<input type="checkbox" data-settings-date />
+								<span>Date</span>
+							</label>
+							<label>
+								<input type="checkbox" data-settings-time />
+								<span>Time</span>
+							</label>
+							<label>
+								<input type="checkbox" data-settings-battery />
+								<span>Battery</span>
+							</label>
+							<label>
+								<input type="checkbox" data-settings-latency />
+								<span>Latency</span>
+							</label>
+						</div>
+						<form class="settings__credentials" data-settings-credentials>
+							<h2>Modifier vos identifiants</h2>
+							<input
+								type="text"
+								name="username"
+								placeholder="Nom d'utilisateur"
+							/>
+							<input
+								type="password"
+								name="password"
+								placeholder="Mot de passe"
+							/>
+							<input
+								type="password"
+								name="confirm-password"
+								placeholder="Confirmer le mot de passe"
+							/>
+							<button type="submit">Modifier</button>
+						</form>
 					</div>
 				</div>
 			</div>

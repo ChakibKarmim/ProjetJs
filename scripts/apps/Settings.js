@@ -11,6 +11,7 @@ export default class Settings {
 		this.time = this.node.querySelector('[data-settings-time]');
 		this.battery = this.node.querySelector('[data-settings-battery]');
 		this.latency = this.node.querySelector('[data-settings-latency]');
+		this.credentials = this.node.querySelector('[data-settings-credentials]');
 
 		this.init();
 
@@ -18,6 +19,10 @@ export default class Settings {
 		this.time.addEventListener('change', this.onChangeTime.bind(this));
 		this.battery.addEventListener('change', this.onChangeBattery.bind(this));
 		this.latency.addEventListener('change', this.onChangeLatency.bind(this));
+		this.credentials.addEventListener(
+			'submit',
+			this.onChangeCredentials.bind(this),
+		);
 	}
 
 	init() {
@@ -70,5 +75,27 @@ export default class Settings {
 		} else {
 			this.header.hideLatency();
 		}
+	}
+
+	onChangeCredentials(e) {
+		e.preventDefault();
+
+		const formData = new FormData(e.target);
+		const username = formData.get('username');
+		const password = formData.get('password');
+		const confirmPassword = formData.get('confirm-password');
+
+		// form validation
+		if (!username || username.trim() === '')
+			return alert('Username is required');
+		if (!password || password.trim() === '')
+			return alert('Password is required');
+		if (!confirmPassword || confirmPassword.trim() === '')
+			return alert('Password confirm is required');
+		if (password !== confirmPassword) return alert("Passwords doesn't match");
+
+		// register user
+		window.localStorage.setItem('auth.username', username);
+		window.localStorage.setItem('auth.password', username);
 	}
 }

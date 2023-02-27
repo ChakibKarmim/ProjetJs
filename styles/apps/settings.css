@@ -1,6 +1,13 @@
 .settings {
+	background-color: #ffffff;
+}
+
+.settings__visibility {
 	display: flex;
 	flex-direction: column;
-	padding: 20px;
-	background-color: #ffffff;
+}
+
+.settings__credentials {
+	display: flex;
+	flex-direction: column;
 }
