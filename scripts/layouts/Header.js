@@ -41,7 +41,7 @@ class Header {
 	initBattery() {
 		navigator.getBattery().then((battery) => {
 			this.battery.textContent =
-				battery.charging + ' ' + `${battery.level * 100}%`;
+				battery.charging + ' ' + `${Math.floor(battery.level * 100)}%`;
 
 			// is battery charging event
 			battery.addEventListener('chargingchange', () => {
