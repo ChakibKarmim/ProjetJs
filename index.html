@@ -5,21 +5,27 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Operating System</title>
 		<!-- Styles -->
+		<link rel="stylesheet" href="./styles/layouts/reset.css" />
 		<link rel="stylesheet" href="./styles/layouts/main.css" />
 		<link rel="stylesheet" href="./styles/layouts/header.css" />
 		<link rel="stylesheet" href="./styles/layouts/footer.css" />
 		<link rel="stylesheet" href="./styles/components/window.css" />
 		<link rel="stylesheet" href="./styles/apps/calculator.css" />
 		<link rel="stylesheet" href="./styles/apps/tic-tac-toe.css" />
+		<link rel="stylesheet" href="./styles/apps/settings.css" />
 		<!-- Scripts -->
 		<script src="./scripts/main.js" type="module" defer></script>
 	</head>
 	<body>
 		<!-- HEADER -->
 		<header class="header" data-header>
-			<div class="header__time" data-header-time></div>
-			<div class="header__battery" data-header-battery></div>
-			<div class="header__latency" data-header-latency></div>
+			<span class="header__logo"></span>
+			<div class="header__stats">
+				<div data-header-date></div>
+				<div data-header-time></div>
+				<div data-header-battery></div>
+				<div data-header-latency></div>
+			</div>
 		</header>
 
 		<!-- SCREEN -->
@@ -110,30 +116,57 @@
 					</div>
 				</div>
 			</div>
+
+			<!-- SETTINGS -->
+			<div class="window" data-window="settings" data-window-trigger="settings">
+				<div class="window__header">
+					<button class="window__control" data-window-minimize>MIN</button>
+					<button class="window__control" data-window-maximize>MAX</button>
+					<button class="window__control" data-window-close>CLOSE</button>
+					<div class="window__handle" data-window-handle></div>
+				</div>
+				<div class="window__body">
+					<div class="settings" data-settings>
+						<label>
+							<input type="checkbox" data-settings-date />
+							<span>Date</span>
+						</label>
+						<label>
+							<input type="checkbox" data-settings-time />
+							<span>Time</span>
+						</label>
+						<label>
+							<input type="checkbox" data-settings-battery />
+							<span>Battery</span>
+						</label>
+						<label>
+							<input type="checkbox" data-settings-latency />
+							<span>Latency</span>
+						</label>
+					</div>
+				</div>
+			</div>
 		</main>
 
 		<!-- FOOTER -->
 		<footer class="footer">
 			<div class="footer__item" id="calculator">
-				<img
-					src="./assets/icons/calculator/calculator-40.png"
-					alt="calculator"
-				/>
+				<img src="./assets/icons/calculator/calculator-40.png" />
 			</div>
 			<div class="footer__item">
-				<img src="./assets/icons/folder/folder-40.png" alt="calculator" />
+				<img src="./assets/icons/folder/folder-40.png" />
 			</div>
 			<div class="footer__item">
-				<img src="./assets/icons/mail/mail-40.png" alt="calculator" />
+				<img src="./assets/icons/mail/mail-40.png" />
 			</div>
-			<div class="footer__item">
-				<img src="./assets/icons/settings/settings-40.png" alt="calculator" />
+			<div class="footer__item" id="settings">
+				<img src="./assets/icons/settings/settings-40.png" />
 			</div>
 			<div class="footer__item" id="tic-tac-toe">
-				<img src="./assets/icons/game/game-40.png" alt="calculator" />
+				<img src="./assets/icons/game/game-40.png" />
 			</div>
 			<div class="footer__item">
-				<img src="./assets/icons/trash/trash-40.png" alt="calculator" />
+				<img src="./assets/icons/trash/trash-40.png" />
 			</div>
 		</footer>
 	</body>
