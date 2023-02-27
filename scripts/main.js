@@ -1,3 +1,4 @@
+import Auth from './layouts/Auth.js';
 import Header from './layouts/Header.js';
 import Window from './components/Window.js';
 import Calculator from './apps/Calculator.js';
@@ -7,6 +8,14 @@ import Timer from './apps/Timer.js';
 import Countdown from './apps/Countdown.js';
 
 (function () {
+	/**
+	 * Auth
+	 */
+
+	const auth = new Auth({
+		node: document.querySelector('[data-auth]'),
+	});
+
 	/**
 	 * Header
 	 */

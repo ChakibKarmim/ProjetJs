@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Operating System</title>
 		<!-- Styles -->
+		<link rel="stylesheet" href="./styles/layouts/auth.css" />
 		<link rel="stylesheet" href="./styles/layouts/reset.css" />
 		<link rel="stylesheet" href="./styles/layouts/main.css" />
 		<link rel="stylesheet" href="./styles/layouts/header.css" />
@@ -19,6 +20,27 @@
 		<script src="./scripts/main.js" type="module" defer></script>
 	</head>
 	<body>
+		<!-- AUTH -->
+		<aside class="auth" data-auth>
+			<form class="auth__login" data-auth-login>
+				<h1>Se connecter</h1>
+				<input type="text" name="username" placeholder="Nom d'utilisateur" />
+				<input type="password" name="password" placeholder="Mot de passe" />
+				<button type="submit">Se connecter</button>
+			</form>
+			<form class="auth__register" data-auth-register>
+				<h1>Créer un compte</h1>
+				<input type="text" name="username" placeholder="Nom d'utilisateur" />
+				<input type="password" name="password" placeholder="Mot de passe" />
+				<input
+					type="password"
+					name="confirm-password"
+					placeholder="Confirmer le mot de passe"
+				/>
+				<button type="submit">Créer</button>
+			</form>
+		</aside>
+
 		<!-- HEADER -->
 		<header class="header" data-header>
 			<span class="header__logo"></span>
