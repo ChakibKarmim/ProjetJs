@@ -7,6 +7,9 @@ class Header {
 		this.battery = this.node.querySelector('[data-header-battery]');
 		this.latency = this.node.querySelector('[data-header-latency]');
 
+		this.serverUrl = 'https://jsonplaceholder.typicode.com/';
+		this.refreshDuration = 5;
+
 		this.initDate();
 		this.initBattery();
 		this.initLatency();
@@ -30,12 +33,28 @@ class Header {
 	}
 
 	initLatency() {
+		this.serverUrl =
+			window.localStorage.getItem('settings.server') || this.serverUrl;
+		this.refreshDuration =
+			parseInt(window.localStorage.getItem('settings.duration'), 10) ||
+			this.refreshDuration;
+
+		// first fetch
 		const startTime = new Date().getTime();
-		fetch('https://jsonplaceholder.typicode.com/').then(() => {
+		fetch(this.serverUrl).then(() => {
 			const endTime = new Date().getTime();
 			const latency = endTime - startTime;
 			this.latency.textContent = `${latency}/ms`;
 		});
+
+		window.setInterval(() => {
+			const startTime = new Date().getTime();
+			fetch(this.serverUrl).then(() => {
+				const endTime = new Date().getTime();
+				const latency = endTime - startTime;
+				this.latency.textContent = `${latency}/ms`;
+			});
+		}, this.refreshDuration * 1000);
 	}
 
 	initBattery() {
