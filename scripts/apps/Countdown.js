@@ -1,4 +1,4 @@
-import Sound from './Sound.js';
+import Sound from '../components/Sound.js';
 
 /**
  * Countdown
@@ -18,6 +18,9 @@ export default class Countdown {
 		this.isStarted = false;
 		this.isPaused = false;
 		this.interval = null;
+		this.sound = new Sound(
+			'https://soundbible.com/mp3/bells-tibetan-daniel_simon.mp3',
+		);
 
 		this.init();
 
@@ -71,6 +74,7 @@ export default class Countdown {
 		this.input.value = ''; /* resolve closing window error */
 		this.counter = 0;
 		this.showTimer();
+		this.sound.stop();
 	}
 
 	showTimer() {
@@ -87,13 +91,6 @@ export default class Countdown {
 		window.clearInterval(this.interval);
 		this.counter = parseInt(this.input.value, 10);
 
-		this.runAudio();
-	}
-
-	runAudio() {
-		const sound = new Sound(
-			'https://soundbible.com/mp3/tolling-bell_daniel-simion.mp3',
-		);
-		sound.play();
+		this.sound.play();
 	}
 }
