@@ -84,8 +84,8 @@ import Countdown from './apps/Countdown.js';
 
 	const timerWindow = new Window({
 		node: document.querySelector("[data-window='timer']"),
-		width: 500,
-		height: 400,
+		width: 250,
+		height: 150,
 		resetCallback: function () {
 			timer.onReset();
 		},
@@ -101,8 +101,8 @@ import Countdown from './apps/Countdown.js';
 
 	const countdownWindow = new Window({
 		node: document.querySelector("[data-window='countdown']"),
-		width: 500,
-		height: 400,
+		width: 250,
+		height: 300,
 		resetCallback: function () {
 			countdown.onReset();
 		},
